@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 墨色系 */
+  --ink-primary: #2C3E50;
+  --ink-secondary: #34495E;
+  --ink-light: #5D6D7E;
+
+  /* 朱砂红 */
+  --cinnabar: #C0392B;
+  --cinnabar-light: #E74C3C;
+  --cinnabar-dark: #962D22;
+  --cinnabar-bg: rgba(192, 57, 43, 0.1);
+
+  /* 古铜金 */
+  --gold: #D4AF37;
+  --gold-light: #F4D03F;
+  --gold-dark: #B8960C;
+
+  /* 玉石青 */
+  --jade: #1ABC9C;
+  --jade-light: #2ECC71;
+  --jade-bg: rgba(26, 188, 156, 0.1);
+
+  /* 背景 */
+  --bg-paper: #FDF6E3;
+  --bg-cream: #FAF3E0;
+  --bg-warm: #F5E6D3;
+
+  /* 文字 */
+  --text-secondary: #7F8C8D;
+  --text-light: #BDC3C7;
+
+  /* 阴影 */
+  --shadow-card: 0 2px 8px rgba(44, 62, 80, 0.08);
+  --shadow-hover: 0 8px 16px rgba(44, 62, 80, 0.12);
+
+  /* 字体 */
+  --font-title: 'Noto Serif SC', 'Source Han Serif SC', serif;
+  --font-body: 'Noto Sans SC', 'Source Han Sans SC', sans-serif;
+  --font-poetry: 'Ma Shan Zheng', cursive;
+  --font-classic: 'ZCOOL XiaoWei', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-paper);
+  color: var(--ink-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ink-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-secondary);
+}
+
+/* 选中文字样式 */
+::selection {
+  background-color: var(--cinnabar-bg);
+  color: var(--cinnabar-dark);
+}
+
+/* 诗词书法风格 */
+.poetry-text {
+  font-family: var(--font-poetry);
+  letter-spacing: 0.1em;
+  line-height: 2;
+}
+
+/* 古文经典风格 */
+.classic-text {
+  font-family: var(--font-classic);
+}
+
+/* 渐变背景 */
+.bg-gradient-paper {
+  background: linear-gradient(180deg, var(--bg-paper) 0%, var(--bg-cream) 100%);
+}
+
+/* 墨韵装饰 */
+.ink-decoration {
+  position: relative;
+}
+
+.ink-decoration::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--ink-light),
+    transparent
+  );
+}
+
+/* 卡片基础样式 */
+.card {
+  background: var(--bg-cream);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s ease-out;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* 按钮基础样式 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.15s ease-out;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-primary {
+  background: var(--cinnabar);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--cinnabar-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--cinnabar);
+  color: var(--cinnabar);
+}
+
+.btn-secondary:hover {
+  background: var(--cinnabar-bg);
+}
+
+/* 骨架屏动画 */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-warm) 0%,
+    var(--bg-cream) 50%,
+    var(--bg-warm) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* 减少动画 (无障碍) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

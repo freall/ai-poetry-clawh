@@ -1,0 +1,263 @@
+{
+  "poems": [
+    {
+      "id": "schn-001",
+      "title": "静夜思",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "李白", "nickname": "诗仙"},
+      "content": ["床前明月光，", "疑是地上霜。", "举头望明月，", "低头思故乡。"],
+      "translation": ["月光照在床前，", "让人怀疑是地上结了霜。", "抬起头望着天上的明月，", "低下头不禁思念起故乡。"],
+      "annotation": [{"term": "床", "explanation": "指井台或窗前。"}, {"term": "疑", "explanation": "好像。"}, {"term": "举头", "explanation": "抬头。"}],
+      "background": "此诗写于唐玄宗开元十四年，李白时年26岁，正在扬州。",
+      "difficulty": 1,
+      "tags": ["思乡", "月亮", "小学必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [
+        {"id": "q-001-1", "type": "choice", "question": "《静夜思》的作者是谁？", "options": ["杜甫", "李白", "王维", "白居易"], "correctIndex": 1, "explanation": "李白是唐代伟大的浪漫主义诗人。"},
+        {"id": "q-001-2", "type": "choice", "question": "“疑是地上霜”的“疑”是什么意思？", "options": ["怀疑", "好像", "疑问", "疑惑"], "correctIndex": 1, "explanation": "“疑”是“好像”的意思。"}
+      ],
+      "schoolLevel": "primary"
+    },
+    {
+      "id": "schn-002",
+      "title": "春晓",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "孟浩然", "nickname": "诗狂"},
+      "content": ["春眠不觉晓，", "处处闻啼鸟。", "夜来风雨声，", "花落知多少。"],
+      "translation": ["春天睡得很香不知不觉天就亮了，", "醒来时到处都能听到鸟叫声。", "想起夜里听到的风雨声，", "不知道有多少花瓣被吹落了。"],
+      "annotation": [{"term": "春晓", "explanation": "春天的早晨。"}, {"term": "闻", "explanation": "听到。"}],
+      "background": "孟浩然是唐代著名的山水田园诗人，这首《春晓》是他最著名的作品之一。",
+      "difficulty": 1,
+      "tags": ["春天", "自然", "小学必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [
+        {"id": "q-002-1", "type": "choice", "question": "《春晓》的作者是？", "options": ["李白", "孟浩然", "杜甫", "王维"], "correctIndex": 1, "explanation": "孟浩然是唐代山水田园诗人。"}
+      ],
+      "schoolLevel": "primary"
+    },
+    {
+      "id": "schn-003",
+      "title": "登鹳雀楼",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "王之涣", "nickname": ""},
+      "content": ["白日依山尽，", "黄河入海流。", "欲穷千里目，", "更上一层楼。"],
+      "translation": ["太阳沿着山坡渐渐西沉，", "黄河水向着大海奔流。", "要想看到更远的地方，", "就要再登上一层楼。"],
+      "annotation": [{"term": "鹳雀楼", "explanation": "楼名，在今山西永济。"}, {"term": "穷", "explanation": "尽，达到极点。"}],
+      "background": "王之涣是唐代边塞诗人，这首诗写出了登楼远望的壮阔景象。",
+      "difficulty": 1,
+      "tags": ["登楼", "黄河", "励志", "小学必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [
+        {"id": "q-003-1", "type": "choice", "question": "“欲穷千里目”的“穷”是什么意思？", "options": ["贫穷", "穷尽", "穷困", "尽头"], "correctIndex": 1, "explanation": "“穷”是“尽、看完”的意思。"}
+      ],
+      "schoolLevel": "primary"
+    },
+    {
+      "id": "schn-004",
+      "title": "望庐山瀑布",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "李白", "nickname": "诗仙"},
+      "content": ["日照香炉生紫烟，", "遥看瀑布挂前川。", "飞流直下三千尺，", "疑是银河落九天。"],
+      "translation": ["太阳照在香炉峰上，峰顶云雾缭绕呈现出紫色，", "远远望去，瀑布就像一条白绢挂在山前。", "水流飞快地从高处直泻而下，大约有三千尺高，", "让人怀疑是银河从天上落到了人间。"],
+      "annotation": [{"term": "香炉", "explanation": "指香炉峰。"}, {"term": "紫烟", "explanation": "紫色的云雾。"}, {"term": "九天", "explanation": "指天的最高处。"}],
+      "background": "李白游览庐山时写下的千古名作，描写了庐山瀑布的壮丽景象。",
+      "difficulty": 2,
+      "tags": ["庐山", "瀑布", "山水", "小学必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [
+        {"id": "q-004-1", "type": "choice", "question": "《望庐山瀑布》的作者是？", "options": ["杜甫", "李白", "王维", "孟浩然"], "correctIndex": 1, "explanation": "李白是唐代浪漫主义诗人。"}
+      ],
+      "schoolLevel": "primary"
+    },
+    {
+      "id": "schn-005",
+      "title": "绝句",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "杜甫", "nickname": "诗圣"},
+      "content": ["两个黄鹂鸣翠柳，", "一行白鹭上青天。", "窗含西岭千秋雪，", "门泊东吴万里船。"],
+      "translation": ["两只黄鹂鸟在翠绿的柳树上欢快地鸣叫，", "一行白鹭排成整齐的队列飞向蓝天。", "从窗口望去，可以看见西岭千年不化的积雪，", "门前停泊着来自东吴行程万里的船只。"],
+      "annotation": [{"term": "黄鹂", "explanation": "一种黄色的鸟。"}, {"term": "白鹭", "explanation": "一种白色的鸟。"}, {"term": "西岭", "explanation": "指成都西边的雪山。"}],
+      "background": "这首诗是杜甫在成都草堂时所作，描写了草堂周围的美丽春景。",
+      "difficulty": 2,
+      "tags": ["春天", "景色", "小学必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [],
+      "schoolLevel": "primary"
+    },
+    {
+      "id": "schn-006",
+      "title": "悯农（其一）",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "李绅", "nickname": ""},
+      "content": ["春种一粒粟，", "秋收万颗子。", "四海无闲田，", "农夫犹饿死。"],
+      "translation": ["春天种下一粒谷子，", "秋天可以收获万颗粮食。", "全天下没有闲置的田地，", "可农民还是被饿死了。"],
+      "annotation": [{"term": "粟", "explanation": "谷子，这里指粮食的种子。"}, {"term": "四海", "explanation": "全天下。"}, {"term": "闲田", "explanation": "闲置的田地。"}],
+      "background": "李绅是中唐诗人，这首诗深刻揭露了封建社会农民受剥削的残酷现实。",
+      "difficulty": 1,
+      "tags": ["农民", "社会", "同情", "小学必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [
+        {"id": "q-006-1", "type": "choice", "question": "“农夫犹饿死”中“犹”是什么意思？", "options": ["仍然", "犹豫", "犹如", "犹豫不决"], "correctIndex": 0, "explanation": "“犹”是“仍然、还是”的意思。"}
+      ],
+      "schoolLevel": "primary"
+    },
+    {
+      "id": "schn-007",
+      "title": "枫桥夜泊",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "张继", "nickname": ""},
+      "content": ["月落乌啼霜满天，", "江枫渔火对愁眠。", "姑苏城外寒山寺，", "夜半钟声到客船。"],
+      "translation": ["月亮落下去了，乌鸦在啼叫，寒霜弥漫满天，", "面对着江边的枫树和渔火，怀着忧愁入睡。", "姑苏城外寒山寺里，", "半夜的钟声传到了客船上。"],
+      "annotation": [{"term": "枫桥", "explanation": "桥名，在今苏州。"}, {"term": "姑苏", "explanation": "苏州的别称。"}, {"term": "寒山寺", "explanation": "寺庙名，在苏州。"}],
+      "background": "张继在经过苏州时，写下了这首描写江南水乡夜景的名作。",
+      "difficulty": 2,
+      "tags": ["夜景", "思乡", "江南", "小学必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [],
+      "schoolLevel": "middle"
+    },
+    {
+      "id": "schn-008",
+      "title": "黄鹤楼送孟浩然之广陵",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "李白", "nickname": "诗仙"},
+      "content": ["故人西辞黄鹤楼，", "烟花三月下扬州。", "孤帆远影碧空尽，", "唯见长江天际流。"],
+      "translation": ["老朋友在黄鹤楼向我辞行，", "在繁花似锦的三月去扬州。", "那只小船越走越远，消失在碧蓝的天空尽头，", "只看见长江水向着天边奔流。"],
+      "annotation": [{"term": "黄鹤楼", "explanation": "楼名，在今武汉。"}, {"term": "烟花", "explanation": "指春天繁花似锦的景象。"}, {"term": "广陵", "explanation": "即扬州。"}],
+      "background": "李白在黄鹤楼送别好友孟浩然去扬州时所作，表达了深厚的友情。",
+      "difficulty": 2,
+      "tags": ["送别", "友情", "小学必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [
+        {"id": "q-008-1", "type": "choice", "question": "《黄鹤楼送孟浩然之广陵》中的“故人”指的是谁？", "options": ["李白自己", "孟浩然", "王维", "杜甫"], "correctIndex": 1, "explanation": "“故人”指老朋友孟浩然。"}
+      ],
+      "schoolLevel": "middle"
+    },
+    {
+      "id": "schn-009",
+      "title": "出塞",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "王昌龄", "nickname": "七绝圣手"},
+      "content": ["秦时明月汉时关，", "万里长征人未还。", "但使龙城飞将在，", "不教胡马度阴山。"],
+      "translation": ["明月还是秦汉时的明月，关塞还是秦汉时的关塞，", "到万里之外打仗的士兵还没有回来。", "如果有像李广那样的名将镇守龙城，", "就不会让敌人的战马越过阴山。"],
+      "annotation": [{"term": "但使", "explanation": "如果。"}, {"term": "龙城飞将", "explanation": "指汉代名将李广。"}, {"term": "阴山", "explanation": "山脉名，在今内蒙古。"}],
+      "background": "王昌龄是唐代边塞诗人，这首诗表达了对良将的渴望和对和平的向往。",
+      "difficulty": 3,
+      "tags": ["边塞", "战争", "爱国", "初中必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [
+        {"id": "q-009-1", "type": "choice", "question": "“龙城飞将”指的是谁？", "options": ["李白", "王昌龄", "李广", "岳飞"], "correctIndex": 2, "explanation": "龙城飞将指汉代名将李广。"}
+      ],
+      "schoolLevel": "middle"
+    },
+    {
+      "id": "schn-010",
+      "title": "春望",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "杜甫", "nickname": "诗圣"},
+      "content": ["国破山河在，", "城春草木深。", "感时花溅泪，", "恨别鸟惊心。", "烽火连三月，", "家书抵万金。", "白头搔更短，", "浑欲不胜簪。"],
+      "translation": ["国家已经破碎了，只有山河依然存在，", "春天来临，城中却草木丛生，一片荒凉。", "感伤时事，看到花开反而流泪，", "怨恨离别，听到鸟鸣也心惊。", "战争连续三个月了，", "一封家书抵得上万两黄金。", "头发越搔越短，", "简直连簪子都插不上了。"],
+      "annotation": [{"term": "国破", "explanation": "指安史之乱中长安被攻陷。"}, {"term": "烽火", "explanation": "指战争。"}, {"term": "抵", "explanation": "值。"}],
+      "background": "杜甫被安史之乱困在长安时所作，表达了对国家命运的担忧和对亲人的思念。",
+      "difficulty": 3,
+      "tags": ["爱国", "战争", "思亲", "初中必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [],
+      "schoolLevel": "middle"
+    },
+    {
+      "id": "schn-011",
+      "title": "卖炭翁",
+      "category": "shi",
+      "dynasty": "唐",
+      "author": {"name": "白居易", "nickname": "诗魔"},
+      "content": ["卖炭翁，伐薪烧炭南山中。", "满面尘灰烟火色，两鬓苍苍十指黑。", "卖炭得钱何所营？身上衣裳口中食。", "可怜身上衣正单，心忧炭贱愿天寒。"],
+      "translation": ["有个卖炭的老翁，在终南山上砍柴烧炭。", "满脸灰尘，被烟火熏成黑褐色，两鬓斑白，十指乌黑。", "卖炭得来的钱用来做什么？买身上的衣服和口中的粮食。", "可怜他身上衣服单薄，却担心炭价便宜希望天气更冷。"],
+      "annotation": [{"term": "薪", "explanation": "柴。"}, {"term": "南山", "explanation": "指终南山。"}, {"term": "营", "explanation": "谋求。"}],
+      "background": "白居易是新乐府运动的倡导者，这首诗揭露了宫市制度的罪恶。",
+      "difficulty": 3,
+      "tags": ["农民", "社会", "揭露", "初中必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [],
+      "schoolLevel": "middle"
+    },
+    {
+      "id": "schn-012",
+      "title": "水调歌头·明月几时有",
+      "category": "ci",
+      "dynasty": "宋",
+      "author": {"name": "苏轼", "nickname": "东坡居士"},
+      "content": [
+        "明月几时有？把酒问青天。",
+        "不知天上宫阙，今夕是何年？",
+        "我欲乘风归去，又恐琼楼玉宇，高处不胜寒。",
+        "起舞弄清影，何似在人间。",
+        "",
+        "转朱阁，低绮户，照无眠。",
+        "不应有恨，何事长向别时圆？",
+        "人有悲欢离合，月有阴晴圆缺，此事古难全。",
+        "但愿人长久，千里共婵娟。"
+      ],
+      "translation": ["明月什么时候才会出现？我举起酒杯询问青天。", "不知道天上的宫殿，现在是哪一年？", "我想乘风飞回天上去，又担心那美玉砌成的楼宇在高处承受不了寒冷。", "在月下起舞，身影翩翩，哪像在人间。", "", "月光转过朱红的楼阁，低低地照进雕花的门窗，照着不能入睡的人。", "月亮不应该有什么怨恨，为什么总在人们分离时变圆呢？", "人有悲欢离合，月有阴晴圆缺，这种事从古以来就难以圆满。", "只希望人能平安健康，虽然相隔千里，也能共同欣赏这美好的月光。"],
+      "annotation": [{"term": "宫阙", "explanation": "宫殿。"}, {"term": "琼楼玉宇", "explanation": "形容月宫中瑰丽雄伟的建筑。"}, {"term": "婵娟", "explanation": "美好的月光，这里指月亮。"}],
+      "background": "这首词作于宋神宗熙宁九年（1076年）中秋夜，苏轼在密州任太守，与弟弟苏辙已七年未见。",
+      "difficulty": 5,
+      "tags": ["中秋", "思亲", "哲理", "高中必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [
+        {"id": "q-012-1", "type": "choice", "question": "《水调歌头·明月几时有》的作者是？", "options": ["李白", "杜甫", "苏轼", "辛弃疾"], "correctIndex": 2, "explanation": "苏轼是北宋文学家。"},
+        {"id": "q-012-2", "type": "choice", "question": "“但愿人长久，千里共婵娟”表达的情感是？", "options": ["对远方亲人的祝福", "对朋友的告别", "对恋人的思念", "对故乡的怀念"], "correctIndex": 0, "explanation": "表达了诗人对亲人平安健康的祝愿。"}
+      ],
+      "schoolLevel": "high"
+    },
+    {
+      "id": "schn-013",
+      "title": "念奴娇·赤壁怀古",
+      "category": "ci",
+      "dynasty": "宋",
+      "author": {"name": "苏轼", "nickname": "东坡居士"},
+      "content": [
+        "大江东去，浪淘尽，千古风流人物。",
+        "故垒西边，人道是，三国周郎赤壁。",
+        "乱石穿空，惊涛拍岸，卷起千堆雪。",
+        "江山如画，一时多少豪杰。",
+        "",
+        "遥想公瑾当年，小乔初嫁了，雄姿英发。",
+        "羽扇纶巾，谈笑间，樯橹灰飞烟灭。",
+        "故国神游，多情应笑我，早生华发。",
+        "人生如梦，一尊还酹江月。"
+      ],
+      "translation": ["长江水滚滚向东流去，浪花淘尽了千古英雄人物。", "故时营垒的西边，人们说那就是三国时期周瑜大败曹军的赤壁。", "陡峭的石壁直插云天，惊涛骇浪拍击着江岸，卷起无数浪花像雪一样。", "山河壮美如画，一时涌现出多少英雄豪杰。", "", "回想周瑜当年，小乔刚嫁给他，英姿勃勃、满怀韬略。", "手摇羽扇，头戴纶巾，谈笑之间，曹军战船就在烟火中化为灰烬。", "如今我神游当年的赤壁战场，应笑自己多情善感，头发都过早地变白了。", "人生就像一场梦，还是洒一杯酒祭奠江上的明月吧。"],
+      "annotation": [{"term": "周郎", "explanation": "指周瑜，三国时吴国名将。"}, {"term": "樯橹", "explanation": "指曹操的战船。"}, {"term": "酹", "explanation": "将酒洒在地上表示祭奠。"}],
+      "background": "苏轼被贬黄州时游览赤壁，写下这首怀古词，表达了对周瑜的仰慕和自身的感慨。",
+      "difficulty": 5,
+      "tags": ["怀古", "赤壁", "周瑜", "高中必背"],
+      "imageUrl": "",
+      "relatedIds": [],
+      "questions": [],
+      "schoolLevel": "high"
+    }
+  ]
+}

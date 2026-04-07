@@ -2,6 +2,7 @@
   "name": "chinese-poetry-learning",
   "version": "0.1.0",
   "description": "诗词雅集 - Chinese Classical Poetry Learning Platform",
+  "homepage": "https://freall.github.io/ai-poetry-workbuddy",
   "type": "module",
   "scripts": {
     "dev": "vite",

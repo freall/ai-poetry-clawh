@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Check, X } from 'lucide-react';
-import { getPoemById } from '@/data/poetry/sample';
+import { getPoemById } from '@/data/poetry/index';
 import { QuestionCard } from '@/components/practice/QuestionCard';
 import { QuizResult } from '@/components/practice/QuizResult';
 import { usePoetryStore } from '@/stores/poetryStore';

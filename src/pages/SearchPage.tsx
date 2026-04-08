@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search as SearchIcon, X, Clock, TrendingUp, ArrowRight } from 'lucide-react';
-import { poems as allPoems } from '@/data/poetry/sample';
+import { poems as allPoems } from '@/data/poetry/index';
 
 export const SearchPage: React.FC = () => {
   const navigate = useNavigate();

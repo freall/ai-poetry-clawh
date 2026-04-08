@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, BookOpen, ArrowRight, Shuffle } from 'lucide-react';
-import { poems as allPoems } from '@/data/poetry/sample';
+import { poems as allPoems } from '@/data/poetry/index';
 import { PoetryCard } from '@/components/poetry/PoetryCard';
 import { ProgressRing } from '@/components/gamification/ProgressRing';
 import { usePoetryStore } from '@/stores/poetryStore';

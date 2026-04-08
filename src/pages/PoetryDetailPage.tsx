@@ -5,7 +5,7 @@ import {
   ArrowLeft, Heart, Share2, ChevronLeft, ChevronRight, 
   BookOpen, User, Clock, Star, Zap, RotateCcw
 } from 'lucide-react';
-import { poems as allPoems, getPoemById } from '@/data/poetry/sample';
+import { poems as allPoems, getPoemById } from '@/data/poetry/index';
 import { PoetryCard } from '@/components/poetry/PoetryCard';
 import { SceneImage } from '@/components/poetry/PoetryScapeImage';
 import { usePoetryStore } from '@/stores/poetryStore';

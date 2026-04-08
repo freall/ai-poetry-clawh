@@ -20,18 +20,50 @@
         "已经战胜了齐军，鲁庄公问曹刿取胜的原因。曹刿回答说：'作战，要靠勇气。第一次击鼓，士兵振作勇气；第二次击鼓，勇气就减弱了；第三次击鼓，勇气就枯竭了。敌方勇气枯竭而我方勇气正盛，所以能战胜他们。大国难于捉摸，怕有伏兵。我看到他们的车印混乱，望见他们的旗帜倒下，所以追击他们。'"
       ],
       "annotation": [
-        {"term": "肉食者", "explanation": "指当权者。"},
-        {"term": "牺牲", "explanation": "祭祀用的牛羊猪等。"},
-        {"term": "狱", "explanation": "案件。"},
-        {"term": "辙", "explanation": "车轮压出的痕迹。"},
-        {"term": "靡", "explanation": "倒下。"}
+        {
+          "term": "肉食者",
+          "explanation": "指当权者。"
+        },
+        {
+          "term": "牺牲",
+          "explanation": "祭祀用的牛羊猪等。"
+        },
+        {
+          "term": "狱",
+          "explanation": "案件。"
+        },
+        {
+          "term": "辙",
+          "explanation": "车轮压出的痕迹。"
+        },
+        {
+          "term": "靡",
+          "explanation": "倒下。"
+        }
       ],
       "background": "《左传》是记载春秋时期历史的编年体史书，相传为左丘明所作。本文记述了鲁庄公十年（公元前684年）齐国与鲁国在长勺之战的史实。",
       "difficulty": 3,
-      "tags": ["古文观止", "战争", "春秋", "论战"],
-      "imageUrl": "",
+      "tags": [
+        "古文观止",
+        "战争",
+        "春秋",
+        "论战"
+      ],
+      "imageUrl": "https://source.unsplash.com/800x600/?spring+blossoms",
       "questions": [
-        {"id": "q-gw001-1", "type": "choice", "question": "《曹刿论战》中'肉食者鄙'的'鄙'是什么意思？", "options": ["卑鄙", "鄙陋，目光短浅", "边鄙", "可鄙"], "correctIndex": 1, "explanation": "这里的'鄙'指目光短浅、见识浅薄。"}
+        {
+          "id": "q-gw001-1",
+          "type": "choice",
+          "question": "《曹刿论战》中'肉食者鄙'的'鄙'是什么意思？",
+          "options": [
+            "卑鄙",
+            "鄙陋，目光短浅",
+            "边鄙",
+            "可鄙"
+          ],
+          "correctIndex": 1,
+          "explanation": "这里的'鄙'指目光短浅、见识浅薄。"
+        }
       ],
       "schoolLevel": "middle"
     },
@@ -55,16 +87,36 @@
         "子犯请求攻击秦军。晋文公说：'不行。没有那个人的力量我不能到今天这个地位。依靠别人的力量而又损害他，这是不仁义的；失去了自己的同盟，这是不明智的；用混乱来代替整齐，这是不武德的。我们还是回去吧。'于是离开了郑国。"
       ],
       "annotation": [
-        {"term": "无礼于晋", "explanation": "指郑国曾经对晋文公无礼。"},
-        {"term": "贰于楚", "explanation": "郑国依附于楚国。"},
-        {"term": "缒", "explanation": "用绳子拴着人从城上往下送。"},
-        {"term": "东道主", "explanation": "东方道路上的主人，指郑国。"},
-        {"term": "阙", "explanation": "损害。"}
+        {
+          "term": "无礼于晋",
+          "explanation": "指郑国曾经对晋文公无礼。"
+        },
+        {
+          "term": "贰于楚",
+          "explanation": "郑国依附于楚国。"
+        },
+        {
+          "term": "缒",
+          "explanation": "用绳子拴着人从城上往下送。"
+        },
+        {
+          "term": "东道主",
+          "explanation": "东方道路上的主人，指郑国。"
+        },
+        {
+          "term": "阙",
+          "explanation": "损害。"
+        }
       ],
       "background": "本文选自《左传》，记载了烛之武凭三寸不烂之舌说退秦军的史实，表现出烛之武的爱国精神和外交才能。",
       "difficulty": 4,
-      "tags": ["古文观止", "外交", "春秋", "烛之武"],
-      "imageUrl": "",
+      "tags": [
+        "古文观止",
+        "外交",
+        "春秋",
+        "烛之武"
+      ],
+      "imageUrl": "https://source.unsplash.com/800x600/?spring+blossoms",
       "questions": [],
       "schoolLevel": "middle"
     },
@@ -88,18 +140,51 @@
         "唉！我曾经探求古代仁人的心情，或许跟以上两种人的心情不同，为什么呢？他们不因为外物的好坏和自己的得失而或喜或悲；在朝廷做官就为百姓担忧；退隐民间又为君王担忧。这样进也担忧，退也担忧。那么什么时候才快乐呢？他们一定会说'在天下人忧之前先忧，在天下人乐之后才乐'吧！唉！如果没有这种人，我同谁一道呢？"
       ],
       "annotation": [
-        {"term": "谪守", "explanation": "被贬官去做太守。"},
-        {"term": "胜状", "explanation": "美好的景色。"},
-        {"term": "横无际涯", "explanation": "宽广无边。"},
-        {"term": "宠辱偕忘", "explanation": "光荣和屈辱都忘了。"},
-        {"term": "庙堂", "explanation": "指朝廷。"}
+        {
+          "term": "谪守",
+          "explanation": "被贬官去做太守。"
+        },
+        {
+          "term": "胜状",
+          "explanation": "美好的景色。"
+        },
+        {
+          "term": "横无际涯",
+          "explanation": "宽广无边。"
+        },
+        {
+          "term": "宠辱偕忘",
+          "explanation": "光荣和屈辱都忘了。"
+        },
+        {
+          "term": "庙堂",
+          "explanation": "指朝廷。"
+        }
       ],
       "background": "范仲淹应滕子京之请，于庆历六年写了这篇记。文章表达了作者'先天下之忧而忧，后天下之乐而乐'的伟大抱负。",
       "difficulty": 4,
-      "tags": ["古文观止", "写景", "抒情", "议论", "高中必背"],
-      "imageUrl": "",
+      "tags": [
+        "古文观止",
+        "写景",
+        "抒情",
+        "议论",
+        "高中必背"
+      ],
+      "imageUrl": "https://source.unsplash.com/800x600/?mountain+landscape+chinese",
       "questions": [
-        {"id": "q-gw003-1", "type": "choice", "question": "《岳阳楼记》中'先天下之忧而忧，后天下之乐而乐'表现了作者怎样的情怀？", "options": ["个人得失", "爱国忧民", "山水田园", "思乡之情"], "correctIndex": 1, "explanation": "表现了范仲淹以天下为己任、忧国忧民的情怀。"}
+        {
+          "id": "q-gw003-1",
+          "type": "choice",
+          "question": "《岳阳楼记》中'先天下之忧而忧，后天下之乐而乐'表现了作者怎样的情怀？",
+          "options": [
+            "个人得失",
+            "爱国忧民",
+            "山水田园",
+            "思乡之情"
+          ],
+          "correctIndex": 1,
+          "explanation": "表现了范仲淹以天下为己任、忧国忧民的情怀。"
+        }
       ],
       "schoolLevel": "high"
     },
@@ -121,18 +206,51 @@
         "不久，夕阳落在山头，游人的影子散乱地移动，那是太守回去、宾客们跟着回去了。树林里浓荫覆盖，上上下下都是鸟鸣声，那是游人们离开后鸟儿在快乐。但是鸟儿只知道山林的快乐，却不知道人们的快乐；人们只知道跟着太守游玩而快乐，却不知道太守快乐的是大家都快乐。醉了能够同大家一起快乐，酒醒后能够用文章来记述这件事的，是太守。太守是谁？是庐陵的欧阳修。"
       ],
       "annotation": [
-        {"term": "蔚然", "explanation": "树木茂盛的样子。"},
-        {"term": "翼然", "explanation": "像鸟张开翅膀一样。"},
-        {"term": "泻", "explanation": "倾泻。"},
-        {"term": "觥筹交错", "explanation": "酒杯和酒筹交互错杂，形容宴饮欢乐。"},
-        {"term": "苍颜", "explanation": "苍老的容颜。"}
+        {
+          "term": "蔚然",
+          "explanation": "树木茂盛的样子。"
+        },
+        {
+          "term": "翼然",
+          "explanation": "像鸟张开翅膀一样。"
+        },
+        {
+          "term": "泻",
+          "explanation": "倾泻。"
+        },
+        {
+          "term": "觥筹交错",
+          "explanation": "酒杯和酒筹交互错杂，形容宴饮欢乐。"
+        },
+        {
+          "term": "苍颜",
+          "explanation": "苍老的容颜。"
+        }
       ],
       "background": "欧阳修被贬到滁州时，写了这篇著名的散文。文章描写了滁州山间的优美景色和宴游之乐，表达了作者与民同乐的情怀。",
       "difficulty": 4,
-      "tags": ["古文观止", "写景", "抒情", "游记", "欧阳修"],
-      "imageUrl": "",
+      "tags": [
+        "古文观止",
+        "写景",
+        "抒情",
+        "游记",
+        "欧阳修"
+      ],
+      "imageUrl": "https://source.unsplash.com/800x600/?mountain+landscape+chinese",
       "questions": [
-        {"id": "q-gw004-1", "type": "choice", "question": "《醉翁亭记》中'醉翁之意不在酒'的下一句是什么？", "options": ["在乎山水之间也", "在乎人与人之间也", "在乎玩乐之间也", "在乎美酒之间也"], "correctIndex": 0, "explanation": "原句是'在乎山水之间也'。"}
+        {
+          "id": "q-gw004-1",
+          "type": "choice",
+          "question": "《醉翁亭记》中'醉翁之意不在酒'的下一句是什么？",
+          "options": [
+            "在乎山水之间也",
+            "在乎人与人之间也",
+            "在乎玩乐之间也",
+            "在乎美酒之间也"
+          ],
+          "correctIndex": 0,
+          "explanation": "原句是'在乎山水之间也'。"
+        }
       ],
       "schoolLevel": "middle"
     },
@@ -150,18 +268,51 @@
         "我认为菊花，是花中的隐士；牡丹，是花中的富贵者；莲花，是花中的君子。唉！喜爱菊花的人，陶渊明之后就很少听到了。喜爱莲花的人，像我一样的还有谁呢？喜爱牡丹的人，当然就很多了。"
       ],
       "annotation": [
-        {"term": "甚蕃", "explanation": "很多。"},
-        {"term": "淤泥", "explanation": "沉积在水底的泥沙。"},
-        {"term": "濯清涟", "explanation": "在清水中洗涤。"},
-        {"term": "亵玩", "explanation": "贴近去玩弄。"},
-        {"term": "隐逸", "explanation": "隐居的人。"}
+        {
+          "term": "甚蕃",
+          "explanation": "很多。"
+        },
+        {
+          "term": "淤泥",
+          "explanation": "沉积在水底的泥沙。"
+        },
+        {
+          "term": "濯清涟",
+          "explanation": "在清水中洗涤。"
+        },
+        {
+          "term": "亵玩",
+          "explanation": "贴近去玩弄。"
+        },
+        {
+          "term": "隐逸",
+          "explanation": "隐居的人。"
+        }
       ],
       "background": "周敦颐是宋代理学的开创者，这篇短文借赞美莲花来表达自己的人格追求。",
       "difficulty": 3,
-      "tags": ["古文观止", "说明", "咏物", "托物言志", "初中必背"],
-      "imageUrl": "",
+      "tags": [
+        "古文观止",
+        "说明",
+        "咏物",
+        "托物言志",
+        "初中必背"
+      ],
+      "imageUrl": "https://source.unsplash.com/800x600/?water+landscape+china",
       "questions": [
-        {"id": "q-gw005-1", "type": "choice", "question": "《爱莲说》中莲花的象征意义是什么？", "options": ["隐士", "富贵", "君子", "平民"], "correctIndex": 2, "explanation": "莲花象征花中君子，代表作者对高尚品格的追求。"}
+        {
+          "id": "q-gw005-1",
+          "type": "choice",
+          "question": "《爱莲说》中莲花的象征意义是什么？",
+          "options": [
+            "隐士",
+            "富贵",
+            "君子",
+            "平民"
+          ],
+          "correctIndex": 2,
+          "explanation": "莲花象征花中君子，代表作者对高尚品格的追求。"
+        }
       ],
       "schoolLevel": "middle"
     }

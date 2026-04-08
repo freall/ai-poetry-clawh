@@ -10,7 +10,7 @@ import { ProgressRing } from '@/components/gamification/ProgressRing';
 import { AchievementBadge, LockedAchievementBadge } from '@/components/gamification/AchievementBadge';
 import { ACHIEVEMENTS, LEVELS } from '@/types';
 import { cn } from '@/utils';
-import { poems as allPoems } from '@/data/poetry/sample';
+import { poems as allPoems } from '@/data/poetry/index';
 
 export const ProfilePage: React.FC = () => {
   const {

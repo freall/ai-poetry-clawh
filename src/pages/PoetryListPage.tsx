@@ -2,15 +2,16 @@ import React, { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, X } from 'lucide-react';
-import { poems as allPoems } from '@/data/poetry/sample';
+import { poems, categoryStats } from '@/data/poetry/index';
 import { PoetryCard } from '@/components/poetry/PoetryCard';
 import { cn } from '@/utils';
 
 const categories = [
-  { id: 'all', name: '全部', count: allPoems.length },
-  { id: 'shi', name: '诗', count: allPoems.filter(p => p.category === 'shi').length },
-  { id: 'ci', name: '词', count: allPoems.filter(p => p.category === 'ci').length },
-  { id: 'wen', name: '文', count: allPoems.filter(p => p.category === 'wen').length },
+  { id: 'all', name: '全部', count: categoryStats.all },
+  { id: 'shi', name: '诗', count: categoryStats.shi },
+  { id: 'ci', name: '词', count: categoryStats.ci },
+  { id: 'qu', name: '曲', count: categoryStats.qu },
+  { id: 'wen', name: '文', count: categoryStats.wen },
 ];
 
 const dynasties = ['全部', '唐', '宋', '元', '明', '清'];
@@ -32,7 +33,7 @@ export const PoetryListPage: React.FC = () => {
   const [sortBy, setSortBy] = useState<'default' | 'difficulty' | 'title'>('default');
 
   const filteredPoems = useMemo(() => {
-    let result = [...allPoems];
+    let result = [...poems];
 
     // 分类筛选
     if (selectedCategory !== 'all') {

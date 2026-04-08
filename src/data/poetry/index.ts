@@ -1,15 +1,67 @@
-// 诗词数据加载器
-// 从 JSON 文件加载完整诗词数据
+// 诗词数据加载器 - 动态按需加载
+// 数据文件放在 public/data/poetry/ 目录，通过 fetch 动态加载
 
-import { Poetry, Author } from '@/types';
+import { Poetry } from '@/types';
 
-// 导入各分类诗词数据
-import tangshiData from '../../../data/poetry/tangshi300.json';
-import songciData from '../../../data/poetry/songci300.json';
-import yuanquData from '../../../data/poetry/yuanqu.json';
-import lunyuData from '../../../data/poetry/lunyu.json';
-import guwenData from '../../../data/poetry/guwen.json';
-import schoolData from '../../../data/poetry/school_required.json';
+// 数据缓存
+let poemsCache: Poetry[] | null = null;
+let cachePromise: Promise<Poetry[]> | null = null;
+
+// 加载单个 JSON 文件
+async function loadJsonFile<T>(filename: string): Promise<T> {
+  const response = await fetch(`/data/poetry/${filename}`);
+  if (!response.ok) {
+    throw new Error(`Failed to load ${filename}`);
+  }
+  return response.json();
+}
+
+// 动态加载并缓存所有诗词
+async function loadAllPoetry(): Promise<Poetry[]> {
+  if (poemsCache) return poemsCache;
+  if (cachePromise) return cachePromise;
+
+  cachePromise = (async () => {
+    try {
+      const [tangshi, songci, guwen] = await Promise.all([
+        loadJsonFile<any[]>('tangshi300.json'),
+        loadJsonFile<any[]>('songci300.json'),
+        loadJsonFile<any>('guwen.json'),
+      ]);
+
+      const poems: Poetry[] = [];
+
+      // 转换唐诗
+      if (Array.isArray(tangshi)) {
+        tangshi.forEach(p => poems.push(convertToPoetry(p)));
+      }
+
+      // 转换宋词
+      if (Array.isArray(songci)) {
+        songci.forEach(p => poems.push(convertToPoetry(p)));
+      }
+
+      // 转换古文观止
+      if (guwen && guwen.pieces && Array.isArray(guwen.pieces)) {
+        guwen.pieces.forEach((p: any) => {
+          poems.push(convertToPoetry({
+            ...p,
+            category: 'wen',
+            author: { name: p.author || '' },
+          }));
+        });
+      }
+
+      poemsCache = poems;
+      return poems;
+    } catch (error) {
+      console.error('Failed to load poetry data:', error);
+      return [];
+    }
+  })();
+
+  return cachePromise;
+}
 
 // 转换为 Poetry 类型
 function convertToPoetry(data: any): Poetry {
@@ -32,92 +84,33 @@ function convertToPoetry(data: any): Poetry {
   };
 }
 
-// 合并所有诗词数据
-function loadAllPoetry(): Poetry[] {
-  const poems: Poetry[] = [];
-
-  // 加载唐诗三百首
-  if (Array.isArray(tangshiData)) {
-    tangshiData.forEach(p => poems.push(convertToPoetry(p)));
-  }
-
-  // 加载宋词三百首
-  if (Array.isArray(songciData)) {
-    songciData.forEach(p => poems.push(convertToPoetry(p)));
-  }
-
-  // 加载元曲
-  if (Array.isArray(yuanquData)) {
-    yuanquData.forEach(p => poems.push(convertToPoetry(p)));
-  }
-
-  // 加载论语 (lunyu.json 是包含单个对象的数组)
-  if (Array.isArray(lunyuData) && lunyuData.length > 0) {
-    const lunyuItem = lunyuData[0];
-    poems.push(convertToPoetry({
-      ...lunyuItem,
-      category: 'wen',
-    }));
-  }
-
-  // 加载古文观止
-  if (guwenData && guwenData.pieces && Array.isArray(guwenData.pieces)) {
-    guwenData.pieces.forEach((p: any) => {
-      poems.push(convertToPoetry({
-        ...p,
-        category: 'wen',
-        author: { name: p.author || '' },
-      }));
-    });
-  }
-
-  // 加载中小学必背
-  if (Array.isArray(schoolData)) {
-    schoolData.forEach(p => poems.push(convertToPoetry(p)));
-  }
-
-  return poems;
-}
-
-// 导出所有诗词
-export const poems: Poetry[] = loadAllPoetry();
-
-// 按分类统计
+// 按分类统计 (静态信息，不需要加载全部数据)
 export const categoryStats = {
-  all: poems.length,
-  shi: poems.filter(p => p.category === 'shi').length,
-  ci: poems.filter(p => p.category === 'ci').length,
-  qu: poems.filter(p => p.category === 'qu').length,
-  wen: poems.filter(p => p.category === 'wen').length,
+  all: '?',
+  shi: '?',
+  ci: '?',
+  qu: 0,
+  wen: '?',
 };
 
-// 获取所有诗词
-export const getAllPoems = (): Poetry[] => poems;
+// 异步获取所有诗词
+export const getAllPoems = (): Promise<Poetry[]> => loadAllPoetry();
 
-// 根据ID获取诗词
-export const getPoemById = (id: string): Poetry | undefined =>
-  poems.find(p => p.id === id);
-
-// 根据分类获取诗词
-export const getPoemsByCategory = (category: string): Poetry[] =>
-  category === 'all' ? poems : poems.filter(p => p.category === category);
-
-// 根据朝代获取诗词
-export const getPoemsByDynasty = (dynasty: string): Poetry[] =>
-  poems.filter(p => p.dynasty === dynasty);
-
-// 根据学段获取诗词
-export const getPoemsBySchoolLevel = (level: string): Poetry[] =>
-  level === 'all' ? poems : poems.filter(p => p.schoolLevel === level);
-
-// 获取随机诗词
-export const getRandomPoem = (): Poetry => {
-  const randomIndex = Math.floor(Math.random() * poems.length);
-  return poems[randomIndex];
+// 异步根据ID获取诗词
+export const getPoemById = async (id: string): Promise<Poetry | undefined> => {
+  const poems = await loadAllPoetry();
+  return poems.find(p => p.id === id);
 };
 
-// 搜索诗词
-export const searchPoems = (query: string): Poetry[] => {
+// 异步根据分类获取诗词
+export const getPoemsByCategory = async (category: string): Promise<Poetry[]> => {
+  const poems = await loadAllPoetry();
+  return category === 'all' ? poems : poems.filter(p => p.category === category);
+};
+
+// 异步搜索诗词
+export const searchPoems = async (query: string): Promise<Poetry[]> => {
+  const poems = await loadAllPoetry();
   const q = query.toLowerCase();
   return poems.filter(p =>
     p.title.toLowerCase().includes(q) ||
@@ -126,8 +119,13 @@ export const searchPoems = (query: string): Poetry[] => {
   );
 };
 
-// 获取诗词数量
-export const getPoetryCount = () => poems.length;
+// 获取随机诗词
+export const getRandomPoem = async (): Promise<Poetry | null> => {
+  const poems = await loadAllPoetry();
+  if (poems.length === 0) return null;
+  const randomIndex = Math.floor(Math.random() * poems.length);
+  return poems[randomIndex];
+};
 
-// 导出 authors (从诗词数据提取)
-export const authors: Author[] = [];
+// 预加载数据（在应用启动时调用）
+export const preloadPoetryData = (): Promise<Poetry[]> => loadAllPoetry();

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, BookOpen, ArrowRight, Shuffle } from 'lucide-react';
-import { poems as allPoems } from '@/data/poetry/index';
+import { poems as allPoems, preloadPoetryData } from '@/data/poetry/index';
 import { PoetryCard } from '@/components/poetry/PoetryCard';
 import { ProgressRing } from '@/components/gamification/ProgressRing';
 import { usePoetryStore } from '@/stores/poetryStore';
@@ -21,22 +21,36 @@ const categoryList = [
 export const HomePage: React.FC = () => {
   const { learnedPoetryIds, exp, streakDays } = usePoetryStore();
   const { progress, name: levelName } = calculateLevel(exp);
-  const [dailyPoem, setDailyPoem] = useState(allPoems[0]);
+  const [dailyPoem, setDailyPoem] = useState<typeof allPoems[0] | null>(null);
   const [randomPoems, setRandomPoems] = useState<typeof allPoems>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // 随机选择一首诗作为今日推荐
-    const random = Math.floor(Math.random() * allPoems.length);
-    setDailyPoem(allPoems[random]);
-    
-    // 随机选择几首诗展示
-    setRandomPoems(shuffle([...allPoems]).slice(0, 4));
+    preloadPoetryData().then(() => {
+      if (allPoems.length > 0) {
+        const random = Math.floor(Math.random() * allPoems.length);
+        setDailyPoem(allPoems[random]);
+        setRandomPoems(shuffle([...allPoems]).slice(0, 4));
+      }
+      setIsLoading(false);
+    });
   }, []);
 
   const handleRandomClick = () => {
     const random = Math.floor(Math.random() * allPoems.length);
     window.location.href = `/poetry/${allPoems[random].id}`;
   };
+
+  if (isLoading || !dailyPoem) {
+    return (
+      <div className="min-h-screen bg-[var(--bg-paper)] flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-5xl mb-4 animate-pulse">📜</div>
+          <p className="text-[var(--text-secondary)]">加载中...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[var(--bg-paper)]">
@@ -188,9 +202,13 @@ export const HomePage: React.FC = () => {
             </button>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {randomPoems.map((poem) => (
+            {randomPoems.length > 0 ? randomPoems.map((poem) => (
               <PoetryCard key={poem.id} poetry={poem} />
-            ))}
+            )) : (
+              <div className="col-span-4 text-center text-[var(--text-secondary)] py-8">
+                暂无诗词
+              </div>
+            )}
           </div>
         </div>
       </section>

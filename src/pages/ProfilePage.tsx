@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
@@ -8,9 +8,9 @@ import {
 import { usePoetryStore } from '@/stores/poetryStore';
 import { ProgressRing } from '@/components/gamification/ProgressRing';
 import { AchievementBadge, LockedAchievementBadge } from '@/components/gamification/AchievementBadge';
-import { ACHIEVEMENTS, LEVELS } from '@/types';
+import { ACHIEVEMENTS, LEVELS, Poetry } from '@/types';
 import { cn } from '@/utils';
-import { poems as allPoems } from '@/data/poetry/index';
+import { poems as allPoems, preloadPoetryData } from '@/data/poetry/index';
 
 export const ProfilePage: React.FC = () => {
   const {
@@ -24,14 +24,34 @@ export const ProfilePage: React.FC = () => {
     achievements,
     wrongQuestionIds,
   } = usePoetryStore();
+  const [isLoading, setIsLoading] = useState(true);
+  const [poems, setPoems] = useState<Poetry[]>([]);
 
-  const learnedPoems = allPoems.filter(p => learnedPoetryIds.includes(p.id));
-  const favoritePoems = allPoems.filter(p => favoriteIds.includes(p.id));
-  const wrongPoems = allPoems.filter(p => 
+  useEffect(() => {
+    preloadPoetryData().then(() => {
+      setPoems([...allPoems]);
+      setIsLoading(false);
+    });
+  }, []);
+
+  const learnedPoems = poems.filter(p => learnedPoetryIds.includes(p.id));
+  const favoritePoems = poems.filter(p => favoriteIds.includes(p.id));
+  const wrongPoems = poems.filter(p => 
     p.questions?.some(q => wrongQuestionIds.includes(q.id))
   );
 
-  const totalPoems = allPoems.length;
+  const totalPoems = poems.length;
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[var(--bg-paper)] flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-5xl mb-4 animate-pulse">👤</div>
+          <p className="text-[var(--text-secondary)]">加载中...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[var(--bg-paper)] pb-8">

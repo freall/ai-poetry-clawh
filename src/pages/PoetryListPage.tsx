@@ -1,8 +1,8 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, X } from 'lucide-react';
-import { poems, categoryStats } from '@/data/poetry/index';
+import { poems as allPoems, categoryStats, preloadPoetryData } from '@/data/poetry/index';
 import { PoetryCard } from '@/components/poetry/PoetryCard';
 import { cn } from '@/utils';
 
@@ -31,6 +31,15 @@ export const PoetryListPage: React.FC = () => {
   const [selectedDynasty, setSelectedDynasty] = useState('全部');
   const [selectedLevel, setSelectedLevel] = useState('all');
   const [sortBy, setSortBy] = useState<'default' | 'difficulty' | 'title'>('default');
+  const [isLoading, setIsLoading] = useState(true);
+  const [poems, setPoems] = useState<typeof allPoems>([]);
+
+  useEffect(() => {
+    preloadPoetryData().then(() => {
+      setPoems([...allPoems]);
+      setIsLoading(false);
+    });
+  }, []);
 
   const filteredPoems = useMemo(() => {
     let result = [...poems];
@@ -79,6 +88,17 @@ export const PoetryListPage: React.FC = () => {
     }
     setSearchParams(searchParams);
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[var(--bg-paper)] flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-5xl mb-4 animate-pulse">📚</div>
+          <p className="text-[var(--text-secondary)]">加载中...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[var(--bg-paper)]">

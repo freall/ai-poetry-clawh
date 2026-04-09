@@ -1,14 +1,24 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search as SearchIcon, X, Clock, TrendingUp, ArrowRight } from 'lucide-react';
-import { poems as allPoems } from '@/data/poetry/index';
+import { poems as allPoems, preloadPoetryData } from '@/data/poetry/index';
+import { Poetry } from '@/types';
 
 export const SearchPage: React.FC = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [poems, setPoems] = useState<Poetry[]>([]);
+
+  useEffect(() => {
+    preloadPoetryData().then(() => {
+      setPoems([...allPoems]);
+      setIsLoading(false);
+    });
+  }, []);
 
   // 热门搜索词
   const hotSearches = ['静夜思', '苏轼', '水调歌头', '春晓', '登鹳雀楼', '岳阳楼记'];
@@ -17,13 +27,13 @@ export const SearchPage: React.FC = () => {
     if (!query || query.length < 2) return [];
     
     const q = query.toLowerCase();
-    return allPoems.filter(p => 
+    return poems.filter(p => 
       p.title.toLowerCase().includes(q) ||
       p.author.name.toLowerCase().includes(q) ||
       p.content.some(line => line.toLowerCase().includes(q)) ||
       p.tags.some(tag => tag.toLowerCase().includes(q))
     ).slice(0, 20);
-  }, [query]);
+  }, [query, poems]);
 
   const handleSearch = useCallback((searchQuery: string) => {
     if (!searchQuery.trim()) return;
@@ -54,6 +64,17 @@ export const SearchPage: React.FC = () => {
   const handleResultClick = (poetryId: string) => {
     navigate(`/poetry/${poetryId}`);
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[var(--bg-paper)] flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-5xl mb-4 animate-pulse">🔍</div>
+          <p className="text-[var(--text-secondary)]">加载中...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[var(--bg-paper)]">

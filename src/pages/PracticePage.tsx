@@ -7,11 +7,12 @@ import { QuestionCard } from '@/components/practice/QuestionCard';
 import { QuizResult } from '@/components/practice/QuizResult';
 import { usePoetryStore } from '@/stores/poetryStore';
 import { EXP_GAINS } from '@/utils';
+import { Poetry } from '@/types';
 
 export const PracticePage: React.FC = () => {
   const { poetryId } = useParams<{ poetryId: string }>();
   const navigate = useNavigate();
-  const [poetry, setPoetry] = useState(getPoemById(poetryId || ''));
+  const [poetry, setPoetry] = useState<Poetry | undefined>(undefined);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -23,8 +24,7 @@ export const PracticePage: React.FC = () => {
 
   useEffect(() => {
     if (poetryId) {
-      const poem = getPoemById(poetryId);
-      setPoetry(poem);
+      getPoemById(poetryId).then(setPoetry);
     }
   }, [poetryId]);
 

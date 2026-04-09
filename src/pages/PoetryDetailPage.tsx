@@ -10,11 +10,12 @@ import { PoetryCard } from '@/components/poetry/PoetryCard';
 import { SceneImage } from '@/components/poetry/PoetryScapeImage';
 import { usePoetryStore } from '@/stores/poetryStore';
 import { cn } from '@/utils';
+import { Poetry } from '@/types';
 
 export const PoetryDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const [poetry, setPoetry] = useState(getPoemById(id || ''));
+  const [poetry, setPoetry] = useState<Poetry | undefined>(undefined);
   const [showTranslation, setShowTranslation] = useState(false);
   const [showAnnotation, setShowAnnotation] = useState(false);
   const [layout, setLayout] = useState<'horizontal' | 'vertical'>('horizontal');
@@ -31,9 +32,10 @@ export const PoetryDetailPage: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      const poem = getPoemById(id);
-      setPoetry(poem);
-      window.scrollTo(0, 0);
+      getPoemById(id).then(poem => {
+        setPoetry(poem);
+        window.scrollTo(0, 0);
+      });
     }
   }, [id]);
 
@@ -374,10 +376,10 @@ export const PoetryDetailPage: React.FC = () => {
             <h2 className="font-title text-lg font-semibold mb-4">相关诗词</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {poetry.relatedIds
-                .map(rid => getPoemById(rid))
-                .filter(Boolean)
+                .map(rid => allPoems.find(p => p.id === rid))
+                .filter((p): p is Poetry => p !== undefined)
                 .slice(0, 4)
-                .map(p => p && <PoetryCard key={p.id} poetry={p} />)}
+                .map(p => <PoetryCard key={p.id} poetry={p} />)}
             </div>
           </section>
         )}

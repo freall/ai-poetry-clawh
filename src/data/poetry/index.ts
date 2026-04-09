@@ -3,6 +3,9 @@
 
 import { Poetry } from '@/types';
 
+// 同步导出的诗词数组（初始为空，加载后填充）
+export const poems: Poetry[] = [];
+
 // 数据缓存
 let poemsCache: Poetry[] | null = null;
 let cachePromise: Promise<Poetry[]> | null = null;
@@ -53,6 +56,9 @@ async function loadAllPoetry(): Promise<Poetry[]> {
       }
 
       poemsCache = poems;
+      // 填充同步导出的数组
+      poems.length = 0;
+      poems.push(...poemsCache);
       return poems;
     } catch (error) {
       console.error('Failed to load poetry data:', error);
